@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'
 
+permissions:
+  contents: write
+
 jobs:
   build-windows:
     runs-on: windows-latest
@@ -26,14 +29,11 @@ jobs:
         run: npx electron-vite build
 
       - name: Empacotar com electron-builder
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx electron-builder --win --x64
+        run: npx electron-builder --win --x64 --publish never
 
       - name: Upload para Release
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            release/**/*.exe
+          files: release/**/*.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

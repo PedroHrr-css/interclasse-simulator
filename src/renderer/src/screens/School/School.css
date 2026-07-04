@@ -1,0 +1,58 @@
+.school-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.school-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-dim);
+  font-size: 10px;
+}
+
+.school-moral-bar {
+  height: 10px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-dim);
+}
+
+.school-moral-fill {
+  height: 100%;
+  background: var(--green);
+  transition: width 0.2s steps(5);
+}
+
+.upgrade-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-dim);
+  gap: 8px;
+}
+
+.upgrade-item__info {
+  flex: 1;
+}
+
+.upgrade-item__name {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.upgrade-item__details {
+  display: flex;
+  gap: 10px;
+}
+
+.school-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  font-size: 10px;
+}

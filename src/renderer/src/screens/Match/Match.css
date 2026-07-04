@@ -1,0 +1,182 @@
+.match-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-screen__header {
+  text-align: center;
+}
+
+.match-scoreboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  margin-top: 8px;
+}
+
+.match-scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px;
+  background: var(--bg-panel);
+  border: 2px solid var(--border-dim);
+}
+
+.match-scoreboard__team {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--white);
+  flex: 1;
+  text-align: center;
+}
+
+.match-scoreboard__score {
+  font-family: var(--font-pixel);
+  font-size: 24px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.prematch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.prematch-player {
+  padding: 8px 10px;
+  border: 2px solid var(--border-dim);
+  cursor: pointer;
+  font-size: 9px;
+  margin-bottom: 4px;
+  transition: border-color 0.05s steps(1);
+}
+
+.prematch-player:hover {
+  border-color: var(--accent);
+}
+
+.prematch-player.selected {
+  border-color: var(--green);
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--green);
+}
+
+.match-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* Feed de partida */
+.match-feed {
+  height: 320px;
+  overflow-y: auto;
+  background: var(--bg-dark);
+  border: 2px solid var(--border-dim);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.match-event {
+  padding: 6px 8px;
+  font-size: 9px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  animation: event-appear 0.1s steps(2) forwards;
+}
+
+@keyframes event-appear {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.match-event__min {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--gray);
+  min-width: 24px;
+}
+
+.match-event__desc {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.match-event__icon {
+  font-size: 14px;
+}
+
+.match-event--gol {
+  background: rgba(76, 175, 80, 0.15);
+  border-left: 3px solid var(--green);
+  color: var(--green);
+  font-family: var(--font-pixel);
+  font-size: 8px;
+}
+
+.match-event--cartao_amarelo {
+  background: rgba(245, 166, 35, 0.1);
+  border-left: 3px solid var(--yellow);
+}
+
+.match-event--cartao_vermelho {
+  background: rgba(233, 69, 96, 0.1);
+  border-left: 3px solid var(--red);
+}
+
+.match-event--inicio_tempo,
+.match-event--fim_tempo,
+.match-event--fim_partida {
+  background: var(--bg-panel);
+  color: var(--accent-2);
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  justify-content: center;
+}
+
+.match-event--loading {
+  color: var(--gray);
+  justify-content: center;
+}
+
+.loading-dots {
+  animation: blink 0.5s steps(1) infinite;
+}
+
+.match-result {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-panel);
+  border: 2px solid var(--accent);
+}
+
+.match-result__title {
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.match-result__score {
+  font-family: var(--font-pixel);
+  font-size: 28px;
+  color: var(--accent-2);
+  margin-bottom: 12px;
+}
+
+.match-result__stats {
+  font-size: 9px;
+  color: var(--gray);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

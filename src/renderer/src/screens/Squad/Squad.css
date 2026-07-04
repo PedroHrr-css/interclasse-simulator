@@ -1,0 +1,115 @@
+.screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border-dim);
+}
+
+.screen-title {
+  font-family: var(--font-pixel);
+  font-size: 18px;
+  color: var(--accent);
+  text-shadow: 2px 2px 0 #000;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  padding: 10px 16px;
+  border: 2px solid var(--border-dim);
+  background: var(--bg-panel);
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--white);
+  background: var(--bg-card);
+}
+
+.squad-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player-card {
+  background: var(--bg-panel);
+  border: 2px solid var(--border-dim);
+  cursor: pointer;
+  transition: border-color 0.05s steps(1);
+}
+
+.player-card:hover        { border-color: var(--accent); }
+.player-card.expanded     { border-color: var(--accent-2); }
+
+.player-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+}
+
+.player-card__name {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--white);
+}
+
+.player-card__apelido {
+  color: var(--yellow);
+  font-size: 12px;
+}
+
+.player-card__meta {
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 5px;
+}
+
+.player-card__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.player-card__media {
+  font-family: var(--font-pixel);
+  font-size: 22px;
+  color: var(--accent-2);
+}
+
+.player-card__detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 16px;
+  border-top: 2px solid var(--border-dim);
+  background: var(--bg-dark);
+}
+
+.player-card__attrs  { display: flex; flex-direction: column; gap: 4px; }
+.player-card__school { display: flex; flex-direction: column; }
+
+.empty-state {
+  text-align: center;
+  color: var(--gray);
+  padding: 60px;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+}
+
+.attr-bar-fill.high { background: var(--green); }
+.attr-bar-fill.mid  { background: var(--yellow); }
+.attr-bar-fill.low  { background: var(--red); }

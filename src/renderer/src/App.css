@@ -1,0 +1,30 @@
+.theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+  width: 46px;
+  height: 46px;
+  background: var(--bg-panel);
+  border: 2px solid var(--border-dim);
+  color: var(--white);
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: var(--shadow-pixel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: border-color 0.05s steps(1), background 0.05s steps(1);
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-2);
+  background: var(--bg-card);
+}
+
+.theme-toggle:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #000;
+}

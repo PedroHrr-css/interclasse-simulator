@@ -1,0 +1,200 @@
+.new-game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  position: relative;
+}
+
+.new-game__scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.1) 2px,
+    rgba(0,0,0,0.1) 4px
+  );
+  pointer-events: none;
+}
+
+.new-game__panel {
+  background: var(--bg-panel);
+  border: 2px solid var(--accent);
+  box-shadow: var(--shadow-pixel), 0 0 48px rgba(233, 69, 96, 0.2);
+  padding: 40px;
+  width: 820px;
+  max-width: calc(100vw - 48px);
+  z-index: 1;
+}
+
+.new-game__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-dim);
+}
+
+.new-game__steps { display: flex; gap: 10px; }
+
+.new-game__step-dot {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border-dim);
+  background: transparent;
+}
+
+.new-game__step-dot.active { border-color: var(--accent); background: var(--accent); }
+.new-game__step-dot.done   { border-color: var(--green); background: var(--green); }
+
+.new-game__step {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.new-game__step-title {
+  font-family: var(--font-pixel);
+  font-size: 16px;
+  color: var(--white);
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* School type cards */
+.school-type-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.school-type-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-dim);
+  padding: 20px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.05s steps(1);
+  box-shadow: var(--shadow-pixel);
+  font-family: var(--font-body);
+}
+
+.school-type-card:hover    { border-color: var(--accent); }
+.school-type-card.selected { border-color: var(--green); background: rgba(76, 175, 80, 0.1); }
+
+.school-type-card__emoji { font-size: 36px; margin-bottom: 10px; }
+
+.school-type-card__name {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.school-type-card__desc { font-size: 14px; line-height: 2; }
+
+/* Input */
+.new-game__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-game__preview-name {
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: var(--accent-2);
+  margin-top: 6px;
+}
+
+.new-game__nav {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+/* Kit editor */
+.kit-editor {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.kit-editor__preview { flex-shrink: 0; }
+
+.kit-editor__controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kit-editor__row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kit-editor__color {
+  width: 56px;
+  height: 36px;
+  border: 2px solid var(--border-dim);
+  background: none;
+  cursor: pointer;
+  padding: 2px;
+}
+
+/* Professor intro */
+.professor-intro {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: var(--bg-card);
+  border: 2px solid var(--border-dim);
+  padding: 20px;
+  box-shadow: var(--shadow-pixel);
+}
+
+.professor-intro__mascot { flex-shrink: 0; }
+
+.professor-intro__text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 2;
+  color: var(--white);
+}
+
+.professor-intro__text strong { color: var(--accent-2); }
+
+/* Mini kit editor */
+.kit-editor-mini {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.kit-editor-mini__preview {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.kit-editor-mini__label {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--accent-2);
+  text-align: center;
+}
+
+.kit-editor-mini__controls {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

@@ -1,0 +1,42 @@
+.kit-screen-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.kit-screen-preview {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 20px;
+  background: var(--bg-panel);
+  border: 2px solid var(--border-dim);
+}
+
+.kit-screen-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.kit-control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kit-control__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kit-editor__color {
+  width: 48px;
+  height: 32px;
+  border: 2px solid var(--border-dim);
+  background: none;
+  cursor: pointer;
+  padding: 2px;
+}

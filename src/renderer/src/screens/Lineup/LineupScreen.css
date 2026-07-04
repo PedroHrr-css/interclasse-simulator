@@ -1,0 +1,164 @@
+.lineup-screen {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── Court panel ── */
+.lineup-court-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 380px;
+  min-width: 320px;
+}
+
+.lineup-court-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-dim);
+}
+
+.lineup-formation-selector { display: flex; gap: 8px; }
+
+.formation-btn {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  padding: 8px 14px;
+  border: 2px solid var(--border-dim);
+  background: var(--bg-panel);
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.formation-btn.active,
+.formation-btn:hover {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+  background: var(--bg-card);
+}
+
+.lineup-court-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+.court-svg {
+  width: 100%;
+  max-height: 100%;
+  display: block;
+  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.7));
+}
+
+.court-slot { cursor: pointer; }
+
+.lineup-court-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 2px solid var(--border-dim);
+  gap: 12px;
+}
+
+.lineup-hint {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--accent-2);
+  line-height: 1.6;
+}
+
+/* ── Player list panel ── */
+.lineup-player-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 2px solid var(--border-dim);
+  background: var(--bg-panel);
+}
+
+.lineup-player-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 2px solid var(--border-dim);
+  background: var(--bg-card);
+  flex-shrink: 0;
+}
+
+.lineup-panel-title {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.lineup-player-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.lineup-player-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border-dim);
+  cursor: pointer;
+  transition: background 0.05s steps(1);
+}
+
+.lineup-player-row:hover:not(.unavailable) { background: var(--bg-card); }
+.lineup-player-row.in-lineup  { background: rgba(76,175,80,0.1); border-left: 4px solid var(--green); }
+.lineup-player-row.selected   { background: rgba(245,166,35,0.15); border-left: 4px solid var(--accent-2); }
+.lineup-player-row.unavailable { opacity: 0.4; cursor: not-allowed; }
+
+.lineup-player-pos {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--gray);
+  min-width: 30px;
+}
+
+.lineup-player-name {
+  flex: 1;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: var(--white);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lineup-player-surname { color: var(--gray); font-size: 11px; }
+
+.lineup-player-rating {
+  font-family: var(--font-pixel);
+  font-size: 15px;
+  min-width: 36px;
+  text-align: right;
+}
+
+.lineup-player-rating.high { color: var(--green); }
+.lineup-player-rating.mid  { color: var(--yellow); }
+.lineup-player-rating.low  { color: var(--red); }
+
+.lineup-player-status {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--red);
+  background: rgba(233,69,96,0.15);
+  padding: 3px 7px;
+}
+
+.lineup-player-check { font-size: 16px; color: var(--green); }

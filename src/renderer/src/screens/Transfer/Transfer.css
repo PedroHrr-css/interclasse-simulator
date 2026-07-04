@@ -1,0 +1,40 @@
+.transfer-card {
+  background: var(--bg-panel);
+  border: 2px solid var(--border-dim);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.05s steps(1);
+}
+
+.transfer-card:hover {
+  border-color: var(--accent);
+}
+
+.transfer-card__info {
+  flex: 1;
+}
+
+.transfer-card__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.transfer-card__media {
+  font-family: var(--font-pixel);
+  font-size: 16px;
+  color: var(--accent-2);
+}
+
+.transfer-card__action {
+  min-width: 90px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.transfer-info {
+  margin-bottom: 12px !important;
+}

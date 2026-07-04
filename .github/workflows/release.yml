@@ -20,18 +20,20 @@ jobs:
           cache: 'npm'
 
       - name: Instalar dependências
-        run: npm ci
+        run: npm install
 
-      - name: Build e empacotar
+      - name: Build Vite + Electron
+        run: npx electron-vite build
+
+      - name: Empacotar com electron-builder
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run dist:win
+        run: npx electron-builder --win --x64
 
-      - name: Upload Release
+      - name: Upload para Release
         uses: softprops/action-gh-release@v2
         with:
-          files: release/*.exe
-          draft: false
-          prerelease: false
+          files: |
+            release/**/*.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
